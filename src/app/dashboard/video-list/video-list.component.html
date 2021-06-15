@@ -1,4 +1,9 @@
-<div class="card teal" *ngFor="let videos of videoList">
+<div
+  class="card teal"
+  *ngFor="let videos of videoList"
+  (click)="selectedId = videos.id"
+  [class.lighten-4]="selectedId !== videos.id"
+>
   <div class="card-content">
     <span class="card-title">{{ videos.title }}</span>
     <p>{{ videos.author }}</p>

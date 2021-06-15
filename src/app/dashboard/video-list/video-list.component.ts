@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./video-list.component.css'],
 })
 export class VideoListComponent {
+  selectedId: string | undefined;
+
   videoList = [
     {
       title: 'Angular Observable Data Flow',
@@ -73,4 +75,8 @@ export class VideoListComponent {
       ],
     },
   ];
+
+  videoClass(title: string) {
+    return 'videos-' + title;
+  }
 }
