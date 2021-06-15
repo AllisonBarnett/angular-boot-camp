@@ -7,7 +7,7 @@ import { Video } from 'src/app/app-types';
   styleUrls: ['./video-player.component.css'],
 })
 export class VideoPlayerComponent implements OnInit {
-  @Input() video: Video;
+  @Input() video: Video | undefined;
 
   constructor() {}
 

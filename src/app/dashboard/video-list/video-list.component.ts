@@ -7,7 +7,11 @@ import { Video } from 'src/app/app-types';
   styleUrls: ['./video-list.component.css'],
 })
 export class VideoListComponent {
-  selectedId: string | undefined;
+  @Input() selectedId: string | undefined;
   @Input() videos: Video[] = [];
   @Output() selectVideo = new EventEmitter<Video>();
+
+  setVideo(video: Video) {
+    this.selectVideo.emit(video);
+  }
 }

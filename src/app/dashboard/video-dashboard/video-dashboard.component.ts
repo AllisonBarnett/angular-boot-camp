@@ -7,8 +7,9 @@ import { Video } from 'src/app/app-types';
   styleUrls: ['./video-dashboard.component.css'],
 })
 export class VideoDashboardComponent implements OnInit {
-  @Input() videos: Video;
   selectedVideo: Video | undefined;
+
+  // @Input() videos: Video;
 
   videoList = [
     {
@@ -78,7 +79,7 @@ export class VideoDashboardComponent implements OnInit {
     },
   ];
 
-  setVideo(video: Video) {
+  setSelectedVideo(video: Video) {
     this.selectedVideo = video;
   }
 
