@@ -1,6 +1,6 @@
 <div
   class="card teal"
-  *ngFor="let videos of videoList"
+  *ngFor="let videos of videos"
   (click)="selectedId = videos.id"
   [class.lighten-4]="selectedId !== videos.id"
 >
