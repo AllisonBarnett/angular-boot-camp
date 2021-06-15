@@ -1,4 +1,6 @@
-<div *ngFor="let videos of videoList">
-  {{ videos.title }}
-  {{ videos.author }}
+<div class="card teal" *ngFor="let videos of videoList">
+  <div class="card-content">
+    <span class="card-title">{{ videos.title }}</span>
+    <p>{{ videos.author }}</p>
+  </div>
 </div>
