@@ -7,5 +7,6 @@ import { Video } from 'src/app/app-types';
   styleUrls: ['./video-card.component.css'],
 })
 export class VideoCardComponent {
-  @Input() videos: Video[] = [];
+  @Input() video: Video | undefined;
+  @Input() isSelected = false;
 }

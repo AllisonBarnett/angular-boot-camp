@@ -1,0 +1,11 @@
+.card {
+  height: 150px;
+}
+
+.stripe {
+  background-color: thistle;
+}
+
+.teal:not(.lighten-4) {
+  color: white;
+}
