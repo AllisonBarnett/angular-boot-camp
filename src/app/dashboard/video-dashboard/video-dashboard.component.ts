@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { Video } from 'src/app/app-types';
 
 @Component({
   selector: 'app-video-dashboard',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./video-dashboard.component.css'],
 })
 export class VideoDashboardComponent implements OnInit {
+  @Input() videos: Video;
+  selectedVideo: Video | undefined;
+
   videoList = [
     {
       title: 'Angular Observable Data Flow',
@@ -73,6 +77,10 @@ export class VideoDashboardComponent implements OnInit {
       ],
     },
   ];
+
+  setVideo(video: Video) {
+    this.selectedVideo = video;
+  }
 
   constructor() {}
 
