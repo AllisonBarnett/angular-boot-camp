@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Video } from 'src/app/app-types';
-import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { VideoDataService } from 'src/app/video-data.service';
 
 const apiUrl = 'https://api.angularbootcamp.com/videos';
 
@@ -17,17 +18,15 @@ export interface ViewDetail {
 })
 export class VideoDashboardComponent implements OnInit {
   selectedVideo: Video | undefined;
-  videoList: Video[] = [];
+  videoList: Observable<Video[]>;
+
+  constructor(svc: VideoDataService) {
+    this.videoList = svc.videos$;
+  }
+
+  ngOnInit(): void {}
 
   setSelectedVideo(video: Video) {
     this.selectedVideo = video;
   }
-
-  constructor(http: HttpClient) {
-    http
-      .get<Video[]>(apiUrl)
-      .subscribe((videoList) => (this.videoList = videoList));
-  }
-
-  ngOnInit(): void {}
 }
