@@ -1,8 +1,9 @@
 <app-video-list
   *ngIf="videos$ | async as videos"
   [videos]="videos || []"
-  [selectedId]="selectedVideo?.id"
-  (selectVideo)="setSelectedVideo($event)"
+  [selectedId]="(selectedVideoId | async) || undefined"
 ></app-video-list>
-<app-video-player [video]="selectedVideo"></app-video-player>
+<app-video-player
+  [videoId]="(selectedVideoId | async) || undefined"
+></app-video-player>
 <app-stat-filters></app-stat-filters>

@@ -9,9 +9,4 @@ import { Video } from 'src/app/app-types';
 export class VideoListComponent {
   @Input() selectedId: string | undefined;
   @Input() videos: Video[] = [];
-  @Output() selectVideo = new EventEmitter<Video>();
-
-  setVideo(video: Video) {
-    this.selectVideo.emit(video);
-  }
 }
