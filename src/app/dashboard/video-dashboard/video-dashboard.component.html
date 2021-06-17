@@ -1,9 +1,9 @@
 <app-video-list
   *ngIf="videos$ | async as videos"
   [videos]="videos || []"
-  [selectedId]="(selectedVideoId | async) || undefined"
+  [selectedId]="(selectedVideo | async)?.id || undefined"
 ></app-video-list>
 <app-video-player
-  [videoId]="(selectedVideoId | async) || undefined"
+  [video]="(selectedVideo | async) || undefined"
 ></app-video-player>
 <app-stat-filters></app-stat-filters>
