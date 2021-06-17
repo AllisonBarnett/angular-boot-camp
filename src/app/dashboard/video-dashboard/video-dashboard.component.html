@@ -1,5 +1,6 @@
 <app-video-list
-  [videos]="(videoList | async) || []"
+  *ngIf="videos$ | async as videos"
+  [videos]="videos || []"
   [selectedId]="selectedVideo?.id"
   (selectVideo)="setSelectedVideo($event)"
 ></app-video-list>

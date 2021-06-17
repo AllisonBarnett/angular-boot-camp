@@ -18,10 +18,10 @@ export interface ViewDetail {
 })
 export class VideoDashboardComponent implements OnInit {
   selectedVideo: Video | undefined;
-  videoList: Observable<Video[]>;
+  videos$: Observable<Video[]>;
 
   constructor(svc: VideoDataService) {
-    this.videoList = svc.videos$;
+    this.videos$ = svc.videos$;
   }
 
   ngOnInit(): void {}

@@ -1,1 +1,17 @@
-<p>stat-filters works!</p>
+<form [formGroup]="search">
+  <label for="title">Title</label>
+  <input id="title" type="text" formControlName="title" />
+  <br />
+  <label for="author">Author</label>
+  <input id="author" type="text" formControlName="author" />
+</form>
+
+Value:
+<pre>{{ search.value | json }}</pre>
+
+Valid: {{ search.valid }}
+
+Title Valid:
+{{ search.get("title")?.valid }}
+
+Author Valid: {{ search.get("author")?.valid }}
